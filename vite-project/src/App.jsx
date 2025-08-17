@@ -2,13 +2,19 @@
 import React from 'react';
 import ShelfExperience from './components/ShelfExperience.jsx';
 import CreativeWorks from "./components/CreativeWorks.jsx";
+import Intro from "./components/Intro.jsx"
+import Header from "./components/Header.jsx"
+import SoftwareProjects from "./components/SoftwareProject.jsx";
 
 function App() {
     return (
-        <div className="bg-blue-500 text-white p-4">
-            <h1 className="text-2xl">Tailwind Test</h1>
+        <div className="p-4">
+            <Header/>
+            <Intro/>
+            <SoftwareProjects/>
             <ShelfExperience />
             <CreativeWorks/>
+
         </div>
     );
 }
