@@ -4,137 +4,109 @@ const projects = [
     {
         id: 1,
         techStack: ["#React", "#NodeJS", "#GraphQL"],
-        name: "Project Alpha",
-        type: "Web App",
-        role: "Lead Developer",
+        name: "Clarity",
+        type: "Website",
+        role: "Software Engineer",
+        View: true,
         description:
-            "This project focuses on creating a responsive web app that streamlines workflows and enhances collaboration.",
+            "Worked with a healthcare startup developing a speech-to-text system that automatically logs patient medical information by listening to conversations",
     },
     {
         id: 2,
         techStack: ["#Python", "#Django", "#PostgreSQL"],
-        name: "Project Beta",
-        type: "Backend API",
-        role: "Backend Engineer",
+        name: "Nurture's Nest",
+        type: "Mobile App",
+        role: "UX Lead",
+        View: true,
         description:
-            "A scalable API designed to handle millions of requests per day with robust data security and fast response times.",
+            "Collaborated with partner clinic in Ghana to create an app that promotes mental health awareness for new and expecting mothers.",
     },
     {
         id: 3,
-        techStack: ["#Flutter", "#Firebase", "#REST"],
-        name: "Project Gamma",
-        type: "Mobile App",
-        role: "Full Stack Developer",
+        techStack: [],
+        name: "Summer in Sydney",
+        type: "Website",
+        role: "Software Engineer",
+        View: false,
         description:
-            "Cross-platform mobile application that provides seamless user experiences and real-time updates.",
+            "Follow-up service project for the Benjamin A. Gilman International Scholarship Award",
     },
 ];
 
 export default function SoftwareProjects() {
     return (
-        <section id="software-projects" style={{ padding: "40px 20px" }}>
-            {projects.map(({ id, techStack, name, type, role, description }) => (
-                <div
-                    key={id}
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "flex-start",
-                        marginBottom: 60,
-                        fontFamily: "'Plantagenet Cherokee', serif",
-                    }}
-                >
-                    {/* Left content */}
-                    <div style={{ flex: 1, paddingRight: 30 }}>
-                        {/* Tech hashtags */}
-                        <div style={{ display: "flex", gap: 12, marginBottom: 8 }}>
-                            {techStack.map((tech, idx) => (
-                                <span
-                                    key={idx}
-                                    style={{
-                                        color: "#1A4CA3",
-                                        opacity: 0.4,
-                                        fontSize: 30,
-                                        userSelect: "none",
-                                    }}
-                                >
-                  {tech}
-                </span>
-                            ))}
-                        </div>
-
-                        {/* Project name */}
-                        <h2
-                            style={{
-                                margin: "0 0 10px 0",
-                                color: "black",
-                                fontSize: 50,
-                                userSelect: "text",
-                            }}
-                        >
-                            {name}
-                        </h2>
-
-                        {/* Type | Role */}
-                        <div
-                            style={{
-                                fontSize: 25,
-                                color: "black",
-                                opacity: 0.8,
-                                marginBottom: 12,
-                                userSelect: "text",
-                            }}
-                        >
-                            {type} | {role}
-                        </div>
-
-                        {/* Description */}
-                        <p
-                            style={{
-                                fontSize: 25,
-                                lineHeight: 1.4,
-                                maxHeight: "3.6em", // ~2 lines
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                marginBottom: 20,
-                                userSelect: "text",
-                            }}
-                        >
-                            {description}
-                        </p>
-
-                        {/* View Project Button */}
-                        <button
-                            style={{
-                                width: 100,
-                                height: 100,
-                                backgroundColor: "#1A4CA3",
-                                color: "white",
-                                border: "none",
-                                borderRadius: 6,
-                                fontSize: 18,
-                                cursor: "pointer",
-                                fontFamily: "'Plantagenet Cherokee', serif",
-                                userSelect: "none",
-                            }}
-                            aria-label={`View project ${name}`}
-                        >
-                            View Project
-                        </button>
-                    </div>
-
-                    {/* Right placeholder image */}
+        <section id="software-projects" className="py-10 px-4">
+            <div className="max-w-6xl mx-auto">
+                {projects.map(({ id, name, techStack, type, role, description, View }) => (
                     <div
-                        style={{
-                            width: 350,
-                            height: 200,
-                            backgroundColor: "#1A4CA3",
-                            borderRadius: 8,
-                            flexShrink: 0,
-                        }}
-                    />
-                </div>
-            ))}
+                        key={id}
+                        className="flex flex-col lg:flex-row justify-center items-start gap-8 mb-16 font-serif"
+                        style={{ fontFamily: "'Plantagenet Cherokee', serif" }}
+                    >
+                        {/* Left placeholder image */}
+                        <div
+                            className="bg-blue-700 rounded-lg flex-shrink-0 w-full lg:w-80 h-48 lg:h-52"
+                            style={{ backgroundColor: '#1A4CA3' }}
+                        />
+
+                        {/* Right side content */}
+                        <div className="w-full lg:w-80">
+                            {/* Project name */}
+                            <h1
+                                className="text-4xl lg:text-5xl text-black mb-2 select-text"
+                                style={{ margin: '0 0 10px 0' }}
+                            >
+                                {name}
+                            </h1>
+
+                            {/* Type | Role */}
+                            <div
+                                className="text-black opacity-80 text-sm mb-3 select-text"
+                                style={{ marginBottom: '12px' }}
+                            >
+                                {type} | {role}
+                            </div>
+
+                            {/* Description */}
+                            <p
+                                className="text-sm leading-relaxed mb-5 select-text text-gray-700"
+                                style={{ marginBottom: '20px' }}
+                            >
+                                {description}
+                            </p>
+
+                            {/* Tech hashtags */}
+                            <div className="flex gap-3 mb-5 flex-wrap justify-center lg:justify-start">
+                                {techStack.map((tech, idx) => (
+                                    <span
+                                        key={idx}
+                                        className="opacity-40 select-none text-xs"
+                                        style={{ color: "#1A4CA3" }}
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* View Project Button */}
+                            <button
+                                className="w-24 h-24 cursor-pointer font-serif select-none opacity-70 hover:opacity-100 transition-opacity duration-200 rounded-lg"
+                                style={{
+                                    backgroundColor: '#f5f5f5',
+                                    color: '#1A4CA3',
+                                    border: '1px solid #1A4CA3',
+                                    fontSize: '14px',
+                                    fontFamily: "'Plantagenet Cherokee', serif"
+                                }}
+                                aria-label={`View project ${name}`}
+                                disabled={!View}
+                            >
+                                {View ? "View Project" : "Coming Soon!"}
+                            </button>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </section>
     );
 }

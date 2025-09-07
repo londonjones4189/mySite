@@ -1,18 +1,38 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
-    { label: "Software Projects", targetId: "software-projects" },
-    { label: "Written Works", targetId: "written-works" },
-    { label: "About", targetId: "about" },
+    { label: "Software Projects", targetId: "software-projects", type: "scroll" },
+    { label: "Written Works", targetId: "/testing125679", type: "navigate" },
+    { label: "About", targetId: "/Experience", type: "navigate" },
 ];
 
 export default function Header() {
     const [active, setActive] = useState(null);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const scrollToSection = (id) => {
         const el = document.getElementById(id);
         if (el) {
             el.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
+    const handleNavClick = (item) => {
+        setActive(item.targetId);
+
+        if (item.type === "scroll") {
+            // If we're not on the home page, navigate there first
+            if (location.pathname !== '/') {
+                navigate('/');
+                // Wait a bit for the page to load, then scroll
+                setTimeout(() => scrollToSection(item.targetId), 100);
+            } else {
+                scrollToSection(item.targetId);
+            }
+        } else if (item.type === "navigate") {
+            navigate(item.targetId);
         }
     };
 
@@ -33,7 +53,10 @@ export default function Header() {
         >
             {/* Left icon */}
             <div
-                onClick={() => scrollToSection("intro")}
+                onClick={() => {
+                    navigate('/');
+                    setTimeout(() => scrollToSection("intro"), 100);
+                }}
                 style={{
                     cursor: "pointer",
                     fontSize: 28,
@@ -44,7 +67,10 @@ export default function Header() {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") scrollToSection("intro");
+                    if (e.key === "Enter" || e.key === " ") {
+                        navigate('/');
+                        setTimeout(() => scrollToSection("intro"), 100);
+                    }
                 }}
             >
                 🪄
@@ -52,19 +78,16 @@ export default function Header() {
 
             {/* Navigation */}
             <nav style={{ display: "flex", gap: 30 }}>
-                {navItems.map(({ label, targetId }, idx) => (
+                {navItems.map((item, idx) => (
                     <div
-                        key={targetId}
-                        onClick={() => {
-                            setActive(targetId);
-                            scrollToSection(targetId);
-                        }}
-                        onMouseEnter={() => setActive(targetId)}
+                        key={item.targetId}
+                        onClick={() => handleNavClick(item)}
+                        onMouseEnter={() => setActive(item.targetId)}
                         onMouseLeave={() => setActive(null)}
                         style={{
                             cursor: "pointer",
                             borderBottom:
-                                active === targetId
+                                active === item.targetId
                                 ? "3px solid #1A4CA3"
                                 : "3px solid transparent",
                             paddingBottom: 4,
@@ -72,15 +95,14 @@ export default function Header() {
                         }}
                         tabIndex={0}
                         role="link"
-                        aria-label={`Go to ${label}`}
+                        aria-label={`Go to ${item.label}`}
                         onKeyDown={(e) => {
                             if (e.key === "Enter" || e.key === " ") {
-                                setActive(targetId);
-                                scrollToSection(targetId);
+                                handleNavClick(item);
                             }
                         }}
                     >
-                        {label}
+                        {item.label}
                     </div>
                 ))}
             </nav>

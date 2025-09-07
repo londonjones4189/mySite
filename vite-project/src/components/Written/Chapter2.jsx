@@ -234,7 +234,7 @@ const PortfolioTemplate = ({
 };
 
 // Main Creative Works Component
-const CreativeWorks = () => {
+const Chapter2 = () => {
     const [selectedWork, setSelectedWork] = useState(null);
 
     // Sample creative works data
@@ -369,4 +369,4 @@ const CreativeWorks = () => {
     );
 };
 
-export default CreativeWorks;
+export default Chapter2;
