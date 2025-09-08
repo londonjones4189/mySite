@@ -3,16 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Intro from './components/Intro.jsx';
 import SoftwareProjects from './components/SoftwareProject.jsx';
-import WrittenWork from './components/Written/WrittenWork.jsx';
 import Contact from './components/Contact.jsx'
 import Experience from "./components/Experience.jsx";
+import About from "./components/About.jsx";
+import Placeholder from "./components/Placeholder.jsx";
 
 
 function Home() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Intro />
-            <SoftwareProjects />
+            <SoftwareProjects/>
         </div>
     );
 }
@@ -29,8 +30,10 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/testing125679" element={<WrittenWork />} />
+                    <Route path="/Written" element={<Placeholder />} />
                     <Route path = "/Experience" element={<Experience/>} />
+                    <Route path = "/About" element={<About/>} />
+                    <></>
                 </Routes>
                 <Contact/>
             </div>
@@ -39,3 +42,6 @@ function App() {
 }
 
 export default App;
+
+
+//import WrittenWork from './components/Written/WrittenWork.jsx';

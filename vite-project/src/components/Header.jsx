@@ -3,8 +3,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
     { label: "Software Projects", targetId: "software-projects", type: "scroll" },
-    { label: "Written Works", targetId: "/testing125679", type: "navigate" },
-    { label: "About", targetId: "/Experience", type: "navigate" },
+    { label: "Written Works", targetId: "/Written", type: "navigate" },
+    { label: "Experience", targetId: "/Experience", type: "navigate"},
+    { label: "About", targetId: "/About", type: "navigate" },
+
 ];
 
 export default function Header() {
