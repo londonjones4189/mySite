@@ -4,12 +4,12 @@ const Intro = () => {
     return (
 
         //fix it so its for a gif not a movie
-        <div className="flex flex-col md:flex-row items-center gap-10 p-10 justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-10 p-5 justify-center">
             <div className="mt-10 flex justify-center">
                 <img
                     src={Book}
                     alt="Animated book"
-                    className="rounded-lg shadow-lg w-[800px] max-w-full"
+                    className="rounded-lg  w-[500px] max-w-full"
                 />
             </div>
             {/* Text Content */
@@ -21,7 +21,8 @@ const Intro = () => {
                 >
                     London Jones
                 </h1>
-                <p className="text-[25px] text-black">
+                <p className="text-2xl mt-4"
+                    style={{ color: "#000000", fontFamily: "'Plantagenet Cherokee', serif" }} >
                     I'm a Boston-based,{" "}
                     <span className="font-bold" style={{color: "#1A4CA3"}}>
             Software Engineer

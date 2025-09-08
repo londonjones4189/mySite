@@ -1,4 +1,5 @@
 import React from "react";
+import IGH from "./photos/IGH.jpeg"
 
 const projects = [
     {
@@ -10,6 +11,7 @@ const projects = [
         View: true,
         description:
             "Worked with a healthcare startup developing a speech-to-text system that automatically logs patient medical information by listening to conversations",
+        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=400&fit=crop&crop=center"
     },
     {
         id: 2,
@@ -20,6 +22,7 @@ const projects = [
         View: true,
         description:
             "Collaborated with partner clinic in Ghana to create an app that promotes mental health awareness for new and expecting mothers.",
+        image: IGH
     },
     {
         id: 3,
@@ -30,27 +33,31 @@ const projects = [
         View: false,
         description:
             "Follow-up service project for the Benjamin A. Gilman International Scholarship Award",
+        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=400&fit=crop&crop=center"
     },
 ];
 
 export default function SoftwareProjects() {
     return (
         <section id="software-projects" className="py-10 px-4">
-            <div className="max-w-6xl mx-auto">
-                {projects.map(({ id, name, techStack, type, role, description, View }) => (
+            <div className="max-w-4xl mx-auto">
+                {projects.map(({ id, name, techStack, type, role, description, View, image }) => (
                     <div
                         key={id}
                         className="flex flex-col lg:flex-row justify-center items-start gap-8 mb-16 font-serif"
                         style={{ fontFamily: "'Plantagenet Cherokee', serif" }}
                     >
-                        {/* Left placeholder image */}
-                        <div
-                            className="bg-blue-700 rounded-lg flex-shrink-0 w-full lg:w-80 h-48 lg:h-52"
-                            style={{ backgroundColor: '#1A4CA3' }}
-                        />
+                        {/* Left large image */}
+                        <div className="flex-shrink-0 w-full lg:w-96 h-64 lg:h-80 rounded-lg overflow-hidden">
+                            <img
+                                src={image}
+                                alt={`${name} project preview`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
 
-                        {/* Right side content */}
-                        <div className="w-full lg:w-80">
+                        {/* Right side content - fills remaining space to container edge */}
+                        <div className="flex-1 w-full">
                             {/* Project name */}
                             <h1
                                 className="text-4xl lg:text-5xl text-black mb-2 select-text"
@@ -67,16 +74,20 @@ export default function SoftwareProjects() {
                                 {type} | {role}
                             </div>
 
-                            {/* Description */}
+                            {/* Description with updated styling */}
                             <p
-                                className="text-sm leading-relaxed mb-5 select-text text-gray-700"
-                                style={{ marginBottom: '20px' }}
+                                className="text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed space-y-4 mb-5 select-text"
+                                style={{
+                                    color: "#000000",
+                                    fontFamily: "'Plantagenet Cherokee', serif",
+                                    marginBottom: '20px'
+                                }}
                             >
                                 {description}
                             </p>
 
                             {/* Tech hashtags */}
-                            <div className="flex gap-3 mb-5 flex-wrap justify-center lg:justify-start">
+                            <div className="flex gap-3 mb-5 flex-wrap justify-start">
                                 {techStack.map((tech, idx) => (
                                     <span
                                         key={idx}

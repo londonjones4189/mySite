@@ -61,7 +61,7 @@ export default function Header() {
                 }}
                 style={{
                     cursor: "pointer",
-                    fontSize: 28,
+                    fontSize: 50,
                     lineHeight: 1,
                     userSelect: "none",
                 }}
