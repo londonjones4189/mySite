@@ -55,12 +55,12 @@ const Experience = () => {
         {
             title: "SWE",
             color: "bg-red-700",
-            annotation: "Annotation #1: Love building scalable systems and solving complex problems!"
+            annotation: "Annotation #1: Love building projects and solving complex problems!"
         },
         {
             title: "Technical Writing",
             color: "bg-orange-600",
-            annotation: "Annotation #2: Passionate about making complex tech accessible to everyone."
+            annotation: "Annotation #2: Passionate learning new forms of writing"
         },
         {
             title: "Project Management",
@@ -117,8 +117,8 @@ const Experience = () => {
                         </h2>
 
                         <div className="p-8 rounded-2xl">
-                            <p className="text-lg text-black leading-relaxed mb-0">
-                                I have experiences in software development, UX design, and copy!
+                            <p className="text-2xl text-black leading-relaxed mb-0">
+                                I have experiences in software development, design, and copy writing!
                             </p>
                             </div>
                         {/* Shelf Container */}
@@ -161,7 +161,7 @@ const Experience = () => {
                                 {/* Book 1 - Scout */}
                                 <div
                                     onClick={() => openBook('job1')}
-                                    className="w-32 h-48 bg-gray-700 rounded cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative group"
+                                    className="w-32 h-48 bg-[#9E90C6] rounded cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative group"
                                 >
                                     <div
                                         className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-white/30 to-black/10 rounded-r"></div>
@@ -191,7 +191,7 @@ const Experience = () => {
                                 {/* Book 3 - Copywriter co-op */}
                                 <div
                                     onClick={() => openBook('job3')}
-                                    className="w-32 h-44 bg-gray-700 rounded cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative group -ml-1"
+                                    className="w-32 h-44 bg-[#9E90C6] rounded cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative group -ml-1"
                                 >
                                     <div
                                         className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-white/30 to-black/10 rounded-r"></div>
@@ -339,7 +339,7 @@ const Experience = () => {
                     </h2>
 
                     <div className="p-8 rounded-2xl">
-                        <p className="text-lg text-black leading-relaxed mb-12">
+                        <p className="text-2xl text-black leading-relaxed mb-12">
                             Looking for my next read! I'm currently seeking opportunities in:
                         </p>
 
@@ -369,11 +369,11 @@ const Experience = () => {
                             <div className="relative">
                                 {/* Project Management - Bottom book - FIXED DIMENSIONS */}
                                 <div
-                                    className="rounded cursor-pointer transition-all duration-300 hover:shadow-xl shadow-lg relative bg-gray-500"
+                                    className="rounded cursor-pointer transition-all duration-300 hover:shadow-xl shadow-lg relative bg-[#1A4CA3] "
                                     style={{width: '300px', height: '60px', marginLeft: '10px'}}
                                     onClick={() => handleBookClick(2)}
                                 >
-                                    <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-white/30 to-black/10 rounded-r"></div>
+
                                     <div className="flex items-center justify-center h-full text-white text-sm font-bold">
                                         Project Management
                                     </div>
@@ -381,11 +381,10 @@ const Experience = () => {
 
                                 {/* Technical Writing - Middle book - FIXED DIMENSIONS */}
                                 <div
-                                    className="rounded cursor-pointer transition-all duration-300 hover:shadow-xl shadow-lg mt-2 relative bg-sky-400"
+                                    className="rounded cursor-pointer transition-all duration-300 hover:shadow-xl shadow-lg mt-2 relative bg-[#9E90C6] "
                                     style={{width: '300px', height: '50px', marginLeft: '-10px'}}
                                     onClick={() => handleBookClick(1)}
                                 >
-                                    <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-white/30 to-black/10 rounded-r"></div>
                                     <div className="flex items-center justify-center h-full text-white text-sm font-bold">
                                         Technical Writing
                                     </div>
@@ -393,11 +392,10 @@ const Experience = () => {
 
                                 {/* SWE - Top book - FIXED DIMENSIONS */}
                                 <div
-                                    className="rounded cursor-pointer transition-all duration-300 hover:shadow-xl shadow-lg mt-2 ml-4 relative bg-gray-600"
+                                    className="rounded cursor-pointer transition-all duration-300 hover:shadow-xl shadow-lg mt-2 ml-4 relative bg-[#1A4CA3]"
                                     style={{width: '300px', height: '60px'}}
                                     onClick={() => handleBookClick(0)}
                                 >
-                                    <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-white/30 to-black/10 rounded-r"></div>
                                     <div className="flex items-center justify-center h-full text-white text-sm font-bold">
                                         SWE
                                     </div>
