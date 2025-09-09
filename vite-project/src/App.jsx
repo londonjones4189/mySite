@@ -7,7 +7,7 @@ import Contact from './components/Contact.jsx'
 import Experience from "./components/Experience.jsx";
 import About from "./components/About.jsx";
 import Placeholder from "./components/Placeholder.jsx";
-
+import ProjectDetail from "./components/ProjectDetail.jsx"; // Add this import
 
 function Home() {
     return (
@@ -31,9 +31,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Written" element={<Placeholder />} />
-                    <Route path = "/Experience" element={<Experience/>} />
-                    <Route path = "/About" element={<About/>} />
-                    <></>
+                    <Route path="/Experience" element={<Experience/>} />
+                    <Route path="/About" element={<About/>} />
+                    <Route path="/project/:projectId" element={<ProjectDetail />} />
                 </Routes>
                 <Contact/>
             </div>
@@ -42,6 +42,5 @@ function App() {
 }
 
 export default App;
-
 
 //import WrittenWork from './components/Written/WrittenWork.jsx';

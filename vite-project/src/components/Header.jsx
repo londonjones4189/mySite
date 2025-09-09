@@ -4,9 +4,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 const navItems = [
     { label: "Software Projects", targetId: "software-projects", type: "scroll" },
     { label: "Written Works", targetId: "/Written", type: "navigate" },
-    { label: "Experience", targetId: "/Experience", type: "navigate"},
+    { label: "Experience", targetId: "/Experience", type: "navigate" },
     { label: "About", targetId: "/About", type: "navigate" },
-
 ];
 
 export default function Header() {
@@ -25,10 +24,8 @@ export default function Header() {
         setActive(item.targetId);
 
         if (item.type === "scroll") {
-            // If we're not on the home page, navigate there first
             if (location.pathname !== '/') {
                 navigate('/');
-                // Wait a bit for the page to load, then scroll
                 setTimeout(() => scrollToSection(item.targetId), 100);
             } else {
                 scrollToSection(item.targetId);
@@ -39,32 +36,14 @@ export default function Header() {
     };
 
     return (
-        <header
-            style={{
-                backgroundColor: "white",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "0 20px",
-                height: 60,
-                fontFamily: "'Plantagenet Cherokee', serif",
-                fontSize: 25,
-                color: "black",
-                userSelect: "none",
-            }}
-        >
+        <header className="bg-white flex items-center justify-between px-10 pt-5 font-serif text-[25px] text-black select-none">
             {/* Left icon */}
             <div
                 onClick={() => {
                     navigate('/');
                     setTimeout(() => scrollToSection("intro"), 100);
                 }}
-                style={{
-                    cursor: "pointer",
-                    fontSize: 50,
-                    lineHeight: 1,
-                    userSelect: "none",
-                }}
+                className="cursor-pointer text-[50px] leading-none"
                 aria-label="Go to Intro"
                 role="button"
                 tabIndex={0}
@@ -79,22 +58,16 @@ export default function Header() {
             </div>
 
             {/* Navigation */}
-            <nav style={{ display: "flex", gap: 30 }}>
-                {navItems.map((item, idx) => (
+            <nav className="flex gap-[30px]">
+                {navItems.map((item) => (
                     <div
                         key={item.targetId}
                         onClick={() => handleNavClick(item)}
                         onMouseEnter={() => setActive(item.targetId)}
                         onMouseLeave={() => setActive(null)}
-                        style={{
-                            cursor: "pointer",
-                            borderBottom:
-                                active === item.targetId
-                                ? "3px solid #1A4CA3"
-                                : "3px solid transparent",
-                            paddingBottom: 4,
-                            transition: "border-color 0.3s ease",
-                        }}
+                        className={`cursor-pointer pb-1 border-b-4 transition-colors duration-300 ${
+                            active === item.targetId ? 'border-blue-800' : 'border-transparent'
+                        }`}
                         tabIndex={0}
                         role="link"
                         aria-label={`Go to ${item.label}`}

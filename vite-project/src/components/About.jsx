@@ -5,9 +5,11 @@ import Birds from "./photos/birds.jpeg";
 import Mathena from "./photos/mathena.jpeg";
 import Syd from "./photos/syndey.jpeg";
 import Yurika from "./photos/yurika.jpeg";
+import Mom from "./photos/mom.jpeg"
+import Party from "./photos/party.jpeg"
 
 // Fixed: photos should be an array, not function parameters
-const photos = [Aayati, Lily, Birds, Mathena, Yurika, Syd];
+const photos = [Party, Aayati, Mathena, Mom, Birds, Lily, Yurika, Syd];
 
 const About = () => {
     return (

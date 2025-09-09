@@ -1,43 +1,22 @@
-import React from "react";
-import IGH from "./photos/IGH.jpeg"
 
-const projects = [
-    {
-        id: 1,
-        techStack: ["#React", "#NodeJS", "#GraphQL"],
-        name: "Clarity",
-        type: "Website",
-        role: "Software Engineer",
-        View: true,
-        description:
-            "Worked with a healthcare startup developing a speech-to-text system that automatically logs patient medical information by listening to conversations",
-        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=400&fit=crop&crop=center"
-    },
-    {
-        id: 2,
-        techStack: ["#Python", "#Django", "#PostgreSQL"],
-        name: "Nurture's Nest",
-        type: "Mobile App",
-        role: "UX Lead",
-        View: true,
-        description:
-            "Collaborated with partner clinic in Ghana to create an app that promotes mental health awareness for new and expecting mothers.",
-        image: IGH
-    },
-    {
-        id: 3,
-        techStack: [],
-        name: "Summer in Sydney",
-        type: "Website",
-        role: "Software Engineer",
-        View: false,
-        description:
-            "Follow-up service project for the Benjamin A. Gilman International Scholarship Award",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=400&fit=crop&crop=center"
-    },
-];
+// 2. Updated SoftwareProjects.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+import { projectsData } from "./Data/projectsData";
 
 export default function SoftwareProjects() {
+    // Convert projectsData object to array for mapping
+    const projects = Object.values(projectsData).map(project => ({
+        id: project.id,
+        name: project.projectName,
+        techStack: project.originalTechStack,
+        type: project.type,
+        role: project.role,
+        description: project.description,
+        View: project.available,
+        image: project.projectImage
+    }));
+
     return (
         <section id="software-projects" className="py-10 px-4">
             <div className="max-w-4xl mx-auto">
@@ -68,7 +47,7 @@ export default function SoftwareProjects() {
 
                             {/* Type | Role */}
                             <div
-                                className="text-black opacity-80 text-sm mb-3 select-text"
+                                className="text-black opacity-80 text-2xl mb-3 select-text"
                                 style={{ marginBottom: '12px' }}
                             >
                                 {type} | {role}
@@ -91,7 +70,7 @@ export default function SoftwareProjects() {
                                 {techStack.map((tech, idx) => (
                                     <span
                                         key={idx}
-                                        className="opacity-40 select-none text-xs"
+                                        className="select-none text-s"
                                         style={{ color: "#1A4CA3" }}
                                     >
                                         {tech}
@@ -100,20 +79,37 @@ export default function SoftwareProjects() {
                             </div>
 
                             {/* View Project Button */}
-                            <button
-                                className="w-24 h-24 cursor-pointer font-serif select-none opacity-70 hover:opacity-100 transition-opacity duration-200 rounded-lg"
-                                style={{
-                                    backgroundColor: '#f5f5f5',
-                                    color: '#1A4CA3',
-                                    border: '1px solid #1A4CA3',
-                                    fontSize: '14px',
-                                    fontFamily: "'Plantagenet Cherokee', serif"
-                                }}
-                                aria-label={`View project ${name}`}
-                                disabled={!View}
-                            >
-                                {View ? "View Project" : "Coming Soon!"}
-                            </button>
+                            {View ? (
+                                <Link to={`/project/${id}`}>
+                                    <button
+                                        className="w-40 h-35 cursor-pointer font-serif select-none rounded-lg hover:opacity-90 transition-opacity"
+                                        style={{
+                                            backgroundColor: '#1A4CA3',
+                                            color: 'white',
+                                            fontSize: '14px',
+                                            padding: '10px',
+                                            fontFamily: "'Plantagenet Cherokee', serif"
+                                        }}
+                                        aria-label={`View project ${name}`}
+                                    >
+                                        View Project
+                                    </button>
+                                </Link>
+                            ) : (
+                                 <button
+                                     className="w-40 h-35 cursor-not-allowed font-serif select-none rounded-lg opacity-50"
+                                     style={{
+                                         backgroundColor: '#1A4CA3',
+                                         color: 'white',
+                                         fontSize: '14px',
+                                         padding: '10px',
+                                         fontFamily: "'Plantagenet Cherokee', serif"
+                                     }}
+                                     disabled
+                                 >
+                                     Coming Soon!
+                                 </button>
+                             )}
                         </div>
                     </div>
                 ))}
