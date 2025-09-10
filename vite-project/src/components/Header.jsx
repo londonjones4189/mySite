@@ -43,7 +43,7 @@ export default function Header() {
                     navigate('/');
                     setTimeout(() => scrollToSection("intro"), 100);
                 }}
-                className="cursor-pointer text-[50px] leading-none"
+                className="cursor-default text-[50px] leading-none"
                 aria-label="Go to Intro"
                 role="button"
                 tabIndex={0}
@@ -65,7 +65,7 @@ export default function Header() {
                         onClick={() => handleNavClick(item)}
                         onMouseEnter={() => setActive(item.targetId)}
                         onMouseLeave={() => setActive(null)}
-                        className={`cursor-pointer pb-1 border-b-4 transition-colors duration-300 ${
+                        className={`cursor-default pb-1 border-b-4 transition-colors duration-300 ${
                             active === item.targetId ? 'border-blue-800' : 'border-transparent'
                         }`}
                         tabIndex={0}
