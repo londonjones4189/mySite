@@ -21,12 +21,7 @@ function Home() {
 function App() {
     return (
         <Router>
-            <div
-                className="p-0"
-                style={{
-                    cursor: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="50" width="32"><text y="50" font-size="24">🪄</text></svg>') 16 0, auto`,
-                }}
-            >
+            <div>
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
