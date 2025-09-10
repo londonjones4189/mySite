@@ -118,7 +118,7 @@ const Experience = () => {
 
                         <div className="p-8 rounded-2xl">
                             <p className="text-2xl text-black leading-relaxed mb-0">
-                                I have experiences in software development, design, and copy writing!
+                                I have experiences in software development, design, and copy writing
                             </p>
                             </div>
                         {/* Shelf Container */}
@@ -340,7 +340,7 @@ const Experience = () => {
 
                     <div className="p-8 rounded-2xl">
                         <p className="text-2xl text-black leading-relaxed mb-12">
-                            Looking for my next read! I'm currently seeking opportunities in:
+                            I'm looking for my next read and currently seeking opportunities in the following.
                         </p>
 
                         {/* Stacked Books with Fixed Annotations */}

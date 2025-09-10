@@ -32,7 +32,7 @@ const Intro = () => {
             Writer
           </span>
                     , passionate about bringing ideas to life through language, creativity,
-                    and technology.
+                    and technology
                 </p>
             </div>
         </div>

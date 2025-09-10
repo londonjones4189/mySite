@@ -22,8 +22,9 @@ export const projectsData = {
     originalTechStack: ["#React", "#Flask", "#GPT-4o-mini"],
     description: "Worked with a healthcare startup developing a speech-to-text system that automatically logs patient medical information by listening to conversations"
   },
-  nurtures_nest: {
-    id: "nurtures_nest",
+
+  nurture_nest: {
+    id: "nurture_nest",
     projectName: "Nurture Nest",
     projectImage: IGH,
     overview: "I had the rewarding opportunity to work with IGH on Nurture Nest, a maternal health app developed in collaboration with Akyem Dwenase Medical Centre in Ghana. The app is designed to support maternal mental well-being through features such as free mental health screenings (including the PHQ-9 and EPDS), as well as a directory of nearby clinics and support resources. We also created a baby–fruit size comparison tool to help mothers track fetal development using familiar and relatable visuals.",
@@ -37,7 +38,7 @@ export const projectsData = {
     type: "Mobile App",
     available: true,
     originalTechStack: ["#Figma", "#Swift"],
-    description: "Collaborated with partner clinic in Ghana to create an app that promotes mental health awareness for new and expecting mothers."
+    description: "Collaborated with partner clinic in Ghana to create an app that promotes mental health awareness for new and expecting mothers"
   },
   gday_mate: {
     id: "gday_mate",

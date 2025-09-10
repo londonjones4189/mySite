@@ -20,7 +20,7 @@ const About = () => {
                     className="text-2xl mt-4"
                     style={{ color: "#000000", fontFamily: "'Plantagenet Cherokee', serif" }}
                 >
-                    Sit back and watch waves crash on Bondi Beach
+                    In the meantime, sit back and watch waves crash on Bondi Beach
                 </p>
 
                 {/* Video */}
