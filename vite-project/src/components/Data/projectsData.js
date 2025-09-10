@@ -24,11 +24,11 @@ export const projectsData = {
   },
   nurtures_nest: {
     id: "nurtures_nest",
-    projectName: "Nurture's Nest",
+    projectName: "Nurture Nest",
     projectImage: IGH,
-    overview: "Collaborated with partner clinic in Ghana to create an app that promotes mental health awareness for new and expecting mothers. This mobile application provides culturally sensitive resources, community support, and professional guidance to improve maternal mental health outcomes in underserved communities.",
+    overview: "I had the rewarding opportunity to work with IGH on Nurture Nest, a maternal health app developed in collaboration with Akyem Dwenase Medical Centre in Ghana. The app is designed to support maternal mental well-being through features such as free mental health screenings (including the PHQ-9 and EPDS), as well as a directory of nearby clinics and support resources. We also created a baby–fruit size comparison tool to help mothers track fetal development using familiar and relatable visuals.",
     role: "UX Lead",
-    contributors: ["Ghana Clinic Partners", "Mental Health Professionals", "Local Community Leaders"],
+    contributors: ["IGH Team"],
     techStack: [
       ["Design", "Figma"],
       ["Mobile Development", "Swift"],
